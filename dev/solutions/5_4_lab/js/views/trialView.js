@@ -2,7 +2,7 @@ define([], function(){
 
   // Define an Trial View
   var TrialView = Backbone.View.extend({
-    el: '.target',
+    el: '.trial-warning',
     template: _.template($('#trial-tpl').html()),
 
     render: function(){

@@ -175,3 +175,45 @@ a {text-decoration: none;}
   margin-left:15px;
 }
 
+/* CTA Boxes */
+
+.cta-boxes {
+  margin-top: 50px;
+}
+
+.cta-box-img {
+  width:130px;
+  position:relative;
+  left:16px;
+}
+
+.cta-single-box {
+  background: #fff;
+  padding: 40px;
+  margin-right:40px;
+}
+
+.cta-title, .cta-caption {
+  text-align: center;
+}
+
+.cta-title {
+  font-size:17px;
+  margin-top:20px;
+}
+
+.cta-caption {
+  margin-top:15px ;
+}
+
+.remove {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  background: none;
+  border:1px solid #e3e3e3;
+  border-radius: 5px
+}
+
+
+
