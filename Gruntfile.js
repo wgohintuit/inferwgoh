@@ -1,3 +1,9 @@
+// Just use  `grunt` from the command line to do a build
+
+// Use `grunt watch` to watch the entire directory
+
+// Use `grunt server` for live reload, then open browser to localhost:9000
+
 module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -7,9 +13,6 @@ module.exports = function(grunt) {
       dist: {
         files: {
           'tmp/index.html': ['dev/index.html'],
-          // Not needed right now, but good to know how to do multiple files
-          // 'tmp/about.html': ['dev/about.html'],
-          // 'tmp/contact.html': ['dev/contact.html'],
         }
       }
     },
@@ -50,7 +53,7 @@ module.exports = function(grunt) {
       }
     },
 
-    // Not needed, since we are developing for educational purposes
+    // NOT NEEDED, since we are developing for educational purposes
     // uglify: {
     //   build: {
     //     src: 'dev/js/*.js',
@@ -58,7 +61,7 @@ module.exports = function(grunt) {
     //   }
     // },
 
-    // Not needed, since we are developing for educational purposes
+    // NOT NEEDED, since we are developing for educational purposes
     // htmlmin: { 
     //   dist: { 
     //     options: { 
@@ -68,14 +71,10 @@ module.exports = function(grunt) {
     //     files: { 
     //      // Place your html files here so that they can be copied to dist
     //      'dist/index.html': 'tmp/index.html', 
-          
-    //      // Not needed at the moment, but good to know how to do multiple files in the future
-    //      'dist/about.html': 'tmp/about.html', 
-    //      'dist/contact.html': 'tmp/contact.html'
     //     }
     //   }    
     // },
-    
+
     cssmin: {
       target: {
         files: {
