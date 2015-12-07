@@ -1,13 +1,13 @@
-# Grunt Bower App
+# Infer
 
-This app aims to illustrate the advantages of using Grunt and Bower to help develop a basic web app.
+After you understand something by Intuiting it, it's time to leave your stamp on the world by Infering that thing in your speech and other actions.
 
 ## Installation
 
 To install the app, do the following:
 
-    git clone git@github.com:bengrunfeld/grunt_bower_app.git
-    cd grunt_bower_app
+    git clone git@github.com:bengrunfeld/infer.git
+    cd infer
     npm install
     bower install
     grunt
@@ -18,17 +18,18 @@ To run the app,
 
 1. Open `dist/index.html` in a browser
 2. Open the Console in Chrome Dev Tools or FF/IE/Safari equivalent  
-3. Press some buttons and see the output in the Console
-4. Click on the `About Us` and `Contact` page links in the top navbar to see that the nav all works 
 
 ## How it works
 
 We use NPM to install Grunt, Bower, and all of Grunt's plugins, listed below.
 
-We will then use Bower to install and maintain the app's dependencies, which in this case are:
+We will then use Bower to install and maintain the app's Front End dependencies, which in this case are:
 
 * Twitter Bootstrap
-* jQuery 
+* jQuery
+* Underscore
+* Backbone
+* Marionette
 
 Then we use Grunt to perform the following tasks:
 
@@ -45,7 +46,8 @@ To perform these tasks, we use the following Grunt plugins:
 * [grunt-contrib-uglify](https://www.npmjs.com/package/grunt-contrib-uglify) - use Uglify to minify our Javascript
 * [grunt-contirb-cssmin](https://www.npmjs.com/package/grunt-contrib-cssmin) - minify our css
 * [grunt-contrib-htmlmin](https://www.npmjs.com/package/grunt-contrib-htmlmin) - minify our html
-* [grunt-contrib-copy](https://www.npmjs.com/package/grunt-contrib-copy) - copy dependency files (e.g. bootstrap css/js) to dist 
+* [grunt-contrib-copy](https://www.npmjs.com/package/grunt-contrib-copy) - copy dependency files (e.g. bootstrap css/js) to dist
+* [grunt-contrib-requirejs](https://www.npmjs.com/package/grunt-contrib-requirejs) - load all our modules, so that we can write modular code
 
 ## But.... why??
 
@@ -59,6 +61,6 @@ What that means is that the only thing the developer has to worry about is, well
 
 All they ever have to focus on is writing the HTML, CSS, and Javascript that eventually becomes their Web App. All other installation, linting and compilation tasks are handled by automated tools. **Woot!** 
 
-## Why are dist and tmp being pushed to the repo?
+## Why are dist and tmp not being pushed to the repo?
 
-In regular production applications, `dist` and `tmp` would **never** be pushed to the main repo. Because the main purpose of this app is illustrative, I want to show the viewer what the finished `dist` and `tmp` folders should look like, with regards to the different plugins being run in Grunt.
+In regular production applications, `dist` and `tmp` are **never** pushed to the main repo, because they are usually large in size and don't provide development benefit to anyone reading them (minified, optimized, compressed code). Also, it gives no benefit to another developer, since using the simple `grunt` command will give you all these things anyway from the dev version of hte code. 

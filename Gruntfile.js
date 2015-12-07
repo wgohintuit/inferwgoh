@@ -44,36 +44,61 @@ module.exports = function(grunt) {
           {expand: true, flatten: true, src: ['bower_components/bootstrap/dist/fonts/*'], dest: 'dist/fonts', filter: 'isFile'},
           // HTML files with URL's swapped
           {expand: true, flatten: true, src: ['tmp/*'], dest: 'dist/', filter: 'isFile'},
+          // Images
+          {expand: true, flatten: true, src: ['dev/img/*'], dest: 'dist/img', filter: 'isFile'},
         ],
       }
     },
+
+    // Not needed, since we are developing for educational purposes
     // uglify: {
     //   build: {
     //     src: 'dev/js/*.js',
     //     dest: 'dist/js/main.min.js'
     //   }
     // },
-    htmlmin: { 
-      dist: { 
-        options: { 
-          removeComments: true,
-          collapseWhitespace: true
-        },
-        files: { 
-          // Place your html files here so that they can be copied to dist
-          'dist/index.html': 'tmp/index.html', 
-          // Not needed at the moment, but good to know how to do multiple files in the future
-          // 'dist/about.html': 'tmp/about.html', 
-          // 'dist/contact.html': 'tmp/contact.html'
-        }
-      }    
-    },
+
+    // Not needed, since we are developing for educational purposes
+    // htmlmin: { 
+    //   dist: { 
+    //     options: { 
+    //       removeComments: true,
+    //       collapseWhitespace: true
+    //     },
+    //     files: { 
+    //      // Place your html files here so that they can be copied to dist
+    //      'dist/index.html': 'tmp/index.html', 
+          
+    //      // Not needed at the moment, but good to know how to do multiple files in the future
+    //      'dist/about.html': 'tmp/about.html', 
+    //      'dist/contact.html': 'tmp/contact.html'
+    //     }
+    //   }    
+    // },
+    
     cssmin: {
       target: {
         files: {
-          'dist/css/style.min.css': ['dev/css/style.css', 'dev/css/style2.css'] 
+          'dist/css/style.min.css': ['dev/css/*'] 
         }
       }
+    },
+    express: {
+      all: {
+        options: {
+          port:9000,
+          hostname: 'localhost',
+          bases: ['./dist'],
+          livereload: true
+        }
+      }
+    },
+    watch: {      
+      files: ['dev/**'],
+      tasks: ['clean', 'processhtml', 'jshint', 'requirejs', 'copy', 'cssmin'],
+      options: {
+        livereload: true,
+      },
     },
   }); // grunt.initConfig
   
@@ -86,9 +111,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-express');
 
   // Default tasks
-  grunt.registerTask('default', ['clean', 'processhtml', 'jshint', 'requirejs', 'copy', 'htmlmin', 'cssmin']);
-
+  grunt.registerTask('default', ['clean', 'processhtml', 'jshint', 'requirejs', 'copy', 'cssmin']);
+  grunt.registerTask('server', ['express', 'watch']);
 };
 

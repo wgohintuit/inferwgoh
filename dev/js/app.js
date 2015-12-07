@@ -1,10 +1,14 @@
-require(["itemModel", "itemView"], function(ItemModel, ItemView){
+require([], function(){
+  // jQuery Test
+  // $('.target').html('jQuery is working <br>');
 
-  var broccoli = new ItemModel({img_src: 'broccoli.jpg', img_alt: 'broccoli', caption: 'Delicious broccoli'});
-  var steak = new ItemModel({img_src: 'steak.png', img_alt: 'steak', caption: 'Juicy Steak'});
-  var tofu = new ItemModel({img_src: 'tofu.jpg', img_alt: 'tofu', caption: 'Seared Tofu'});
+  // // Underscore Test
+  // if (_.contains([1, 2, 3], 3)) {
+  //   $('.target').append('Underscore is working <br>');
+  // }
 
-  broccoli_view = new ItemView({model: [broccoli, steak, tofu]});
-
-  broccoli_view.render();
+  // // Backbone Test
+  // var model = new Backbone.Model({isWorking: 'working'});
+  // $('.target').append('Backone is ' + model.get('isWorking'));
+  // console.log('hello');
 });
