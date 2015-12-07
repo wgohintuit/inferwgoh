@@ -81,6 +81,7 @@ a {text-decoration: none;}
   max-height: 40px;
   padding:0;
   border-radius: 0;
+  margin-bottom:50px;
 }
 
 .navbar-buttons, .navbar-options {
@@ -157,3 +158,20 @@ a {text-decoration: none;}
   height:100px;
   background: darkblue;
 }
+
+
+/* Trial Warning Box */
+
+.trial-warning-container {
+  border: 1px solid #efb328;
+  padding:15px;
+}
+
+.trial-warning-container img {
+  width: 20px;
+}
+
+.trial-warning-container .trial-txt {
+  margin-left:15px;
+}
+
