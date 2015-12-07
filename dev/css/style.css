@@ -73,13 +73,14 @@ a {text-decoration: none;}
   background: #f2f5fa;
 }
 
-/* Main Content – Navbar */
+/* MC - Navbar */
 
 .navbar {
   background: #e3eaf2;
   min-height: 38px;
   max-height: 40px;
   padding:0;
+  border-radius: 0;
 }
 
 .navbar-buttons, .navbar-options {
@@ -101,15 +102,16 @@ a {text-decoration: none;}
   background-size: 26px;
   background-repeat: no-repeat;
   background-position: 11px 7px;
+  border-right: 1px solid #e3eaf2;
 }
 
 .navbar-buttons .plus {
-  background-color:#0097ce;
   background-image:url(../img/plus.jpg);
   background-size: 26px;
   background-repeat: no-repeat;
   background-position: 13px 7px;
   left:-3px;
+  border-right: 1px solid #e3eaf2;
 }
 
 .navbar-buttons .timeclock {
@@ -118,20 +120,40 @@ a {text-decoration: none;}
   background-size: 26px;
   background-repeat: no-repeat;
   background-position: 13px 7px;
-
 }
 
 .navbar-buttons {
   margin-left: 390px;
 }
 
+.navbar-options {
+  margin-left: 230px;
+}
+
 .navbar-options .user, .navbar-options .help {
   float:left;
-  padding-left:11px;
-  padding-right:11px;
+  padding:7px 11px 0 11px;
   border-left:1px solid #bfd1e7;
+  height:40px;
+}
+
+.navbar-options .user-name, .navbar-options .user-help {
+  padding-left: 9px;
 }
 
 .navbar-options img {
   width: 22px;
+}
+
+
+/* Main Content Area */
+
+.main-content-area {
+  margin-left:20px;
+}
+
+.square {
+  width: 100px;
+  height:100px;
+  background: darkblue;
 }
